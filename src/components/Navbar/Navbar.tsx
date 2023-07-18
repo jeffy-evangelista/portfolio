@@ -1,19 +1,37 @@
-import { Button, Flex, HStack, Image, Spacer } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Spacer,
+} from "@chakra-ui/react";
 import React from "react";
 import logo from "../../../public/portfolio-logo.svg";
 type NavbarProps = {};
-
+import { HamburgerIcon } from "@chakra-ui/icons";
 const Navbar: React.FC<NavbarProps> = () => {
   return (
     <Flex
       align={"center"}
-      px={{ sm: "10", md: "100px", lg: "150px" }}
+      px={{ base: "5", sm: "100px", lg: "150px" }}
       mx="auto"
       h={"56px"}
     >
       <Image h={"40px"} src={logo} />
       <Spacer />
-      <HStack spacing={{ sm: "5px", md: "20px", lg: "30px" }}>
+
+      <IconButton
+        display={{ base: "block", md: "none" }}
+        variant={"outline"}
+        // borderColor={"#F2F0EE"}
+        aria-label="menu-button"
+        icon={<HamburgerIcon />}
+      />
+      <HStack
+        spacing={{ md: "20px", lg: "30px" }}
+        display={{ base: "none", md: "block" }}
+      >
         <Button variant={"ghost"}>Home</Button>
         <Button variant={"ghost"}>About</Button>
         <Button variant={"ghost"}>Tools</Button>
