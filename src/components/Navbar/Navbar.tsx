@@ -21,13 +21,14 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Image h={"40px"} src={logo} />
       <Spacer />
 
-      <IconButton
+      {/* <IconButton
         display={{ base: "block", md: "none" }}
         variant={"outline"}
         // borderColor={"#F2F0EE"}
         aria-label="menu-button"
-        icon={<HamburgerIcon />}
-      />
+        icon={}
+      /> */}
+      <HamburgerIcon display={{ base: "block", md: "none" }} />
       <HStack
         spacing={{ md: "20px", lg: "30px" }}
         display={{ base: "none", md: "block" }}
