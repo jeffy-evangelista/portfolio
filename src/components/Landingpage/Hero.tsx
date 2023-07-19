@@ -1,11 +1,9 @@
-import { Flex } from "@chakra-ui/react";
+import CustomSection from "components/CustomSection";
 function Hero() {
   return (
-    <section>
-      <Flex h={"100vh"} bg={"brand.darkGrey"}>
-        asdf
-      </Flex>
-    </section>
+    <CustomSection sectionName="hero">
+      <>this the Hero page</>
+    </CustomSection>
   );
 }
 

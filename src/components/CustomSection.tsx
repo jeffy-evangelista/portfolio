@@ -2,7 +2,7 @@ import { Flex, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 type CustomSectionProps = {
-  sectionTitle: string;
+  sectionTitle?: string;
   sectionName: string;
   children: React.ReactNode;
 };
@@ -17,10 +17,14 @@ const CustomSection: React.FC<CustomSectionProps> = ({
       <Flex
         direction={"column"}
         align={"center"}
-        border={"1px solid red"}
-        minH={"100vh"}
+        // border={"1px solid red"}
+        minH={"calc(100vh - 56px)"}
       >
-        <Text color={"brand.darkGrey"} fontSize={"48px"} fontWeight={"bold"}>
+        <Text
+          color={"brand.darkGrey"}
+          fontSize={{ base: "24px", md: "32px" }}
+          fontWeight={"semibold"}
+        >
           {sectionTitle}
         </Text>
         <Flex
@@ -28,7 +32,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
           justify={"center"}
           w={"full"}
           flexGrow={1}
-          border={"1px solid blue"}
+          // border={"1px solid blue"}
         >
           <VStack spacing={10}>{children}</VStack>
         </Flex>
