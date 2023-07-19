@@ -1,4 +1,3 @@
-import { Box } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
 import React from "react";
 
