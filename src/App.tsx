@@ -1,8 +1,9 @@
-import { Button, Text, useBreakpointValue } from "@chakra-ui/react";
+import { useBreakpointValue } from "@chakra-ui/react";
+import Skills from "components/Landingpage/Skills";
 import Layout from "./components/Layout/Layout";
-
+import Landingpage from "./pages/Landingpage";
 function App() {
-  const sreenWidth = useBreakpointValue({
+  const screenWidth = useBreakpointValue({
     base: "base",
     sm: "sm",
     md: "md",
@@ -11,8 +12,7 @@ function App() {
   });
   return (
     <Layout>
-      <Button colorScheme="blue">Button</Button>
-      <Text>{sreenWidth}</Text>
+      <Landingpage />
     </Layout>
   );
 }

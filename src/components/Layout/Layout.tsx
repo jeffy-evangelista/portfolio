@@ -9,7 +9,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Flex px={{ sm: "10", md: "100px", lg: "150px" }}>{children}</Flex>
+      <Flex
+        direction={"column"}
+        w={"full"}
+        px={{ sm: "10", md: "100px", lg: "150px" }}
+      >
+        {children}
+      </Flex>
     </>
   );
 };

@@ -13,8 +13,12 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 const Navbar: React.FC<NavbarProps> = () => {
   return (
     <Flex
+      zIndex={"2"}
+      top={0}
+      position={"sticky"}
+      bg={"brand.lightGrey"}
       align={"center"}
-      px={{ base: "5", sm: "100px", lg: "150px" }}
+      px={{ base: "5", sm: "50px", md: "100px", lg: "150px" }}
       mx="auto"
       h={"56px"}
     >
@@ -28,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         icon={<HamburgerIcon />}
       />
       <HStack
-        spacing={{ md: "20px", lg: "30px" }}
+        spacing={{ base: "0px", lg: "30px" }}
         display={{ base: "none", md: "block" }}
       >
         <Button variant={"ghost"}>Home</Button>
