@@ -1,12 +1,12 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
 import TechCard from "components/Skills/TechCard";
-import ChakraUI from "assets/chakra-ui.png";
-import Firebase from "assets/firebase.png";
-import NextJS from "assets/nextjs.png";
-import Postgres from "assets/postgres.png";
-import ReactJS from "assets/reactjs.png";
-import Typescript from "assets/typescript.png";
+import ChakraUI from "assets/icons/chakra-ui.png";
+import Firebase from "assets/icons/firebase.png";
+import NextJS from "assets/icons/nextjs.png";
+import Postgres from "assets/icons/postgres.png";
+import ReactJS from "assets/icons/reactjs.png";
+import Typescript from "assets/icons/typescript.png";
 
 const Skills = () => {
   const techs = [

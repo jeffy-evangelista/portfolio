@@ -9,7 +9,7 @@ type NavLinkProps = {
 
 const NavLink: React.FC<NavLinkProps> = ({ to, name }) => {
   return (
-    <Button variant={"ghost"}>
+    <Button variant={"ghost"} colorScheme="teal" color={"brand.darkGrey"}>
       {" "}
       <Link
         activeClass="active"

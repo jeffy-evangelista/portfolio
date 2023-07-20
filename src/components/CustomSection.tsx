@@ -14,11 +14,17 @@ const CustomSection: React.FC<CustomSectionProps> = ({
 }) => {
   return (
     <div id={sectionName}>
-      <Flex direction={"column"} align={"center"} minH={"calc(100vh - 56px)"}>
+      <Flex
+        direction={"column"}
+        align={"center"}
+        minH={"calc(100vh - 56px)"}
+        mb={"100px"}
+      >
         <Text
           color={"brand.darkGrey"}
           fontSize={{ base: "24px", md: "32px" }}
           fontWeight={"semibold"}
+          mb={"100px"}
         >
           {sectionTitle}
         </Text>
