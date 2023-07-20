@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { AspectRatio, Text, Box, Button, Flex } from "@chakra-ui/react";
+import { Text, Box, Button, Flex } from "@chakra-ui/react";
 type ProjectCardProps = {};
 
 const ProjectCard: React.FC<ProjectCardProps> = () => {
