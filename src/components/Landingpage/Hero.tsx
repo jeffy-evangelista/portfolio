@@ -11,21 +11,21 @@ function Hero() {
       >
         <Flex
           direction={"column"}
-          mr={{ base: "0", md: "70px" }}
+          mr={{ base: "0", md: "30px" }}
           pb={{ base: "20px", md: "0px" }}
         >
           <Text fontSize={"16px"} color={"teal"}>
             Hello, I am
           </Text>
           <Text
-            fontSize={{ base: "30px", sm: "38px", md: "48px", lg: "72px" }}
+            fontSize={{ base: "30px", sm: "38px", md: "40px", lg: "72px" }}
             fontWeight={"bold"}
             color={"brand.darkGrey"}
           >
             Jeffy Evangelista
           </Text>
           <Text
-            fontSize={{ base: "24px", sm: "28px", md: "38px", lg: "48px" }}
+            fontSize={{ base: "24px", sm: "25px", md: "34px", lg: "48px" }}
             fontWeight={"bold"}
             color={"rgba(88, 89, 91, 0.5)"}
           >
@@ -34,7 +34,7 @@ function Hero() {
         </Flex>
         <Image
           borderRadius={"full"}
-          boxSize={{ base: "270px", md: "300px", lg: "330px" }}
+          boxSize={{ base: "250px", md: "270px", lg: "300px" }}
           alt="cover-photo"
           src={ProfilePicture}
         />

@@ -1,4 +1,4 @@
-import { Box, Flex, Stack } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
 type SocialLinksProps = {};
@@ -11,20 +11,9 @@ const SocialLinks: React.FC<SocialLinksProps> = () => {
       left={0}
       position={"fixed"}
     >
-      <Stack>
-        <Box boxSize={"60px"} bg={"white"}>
-          logo here
-        </Box>
-        <Box boxSize={"60px"} bg={"white"}>
-          logo here
-        </Box>
-        <Box boxSize={"60px"} bg={"white"}>
-          logo here
-        </Box>
-        <Box boxSize={"60px"} bg={"white"}>
-          logo here
-        </Box>
-      </Stack>
+      <Flex bg={"white"} boxSize={"60px"} align={"center"} justify={"center"}>
+        <Text>logo here</Text>
+      </Flex>
     </Flex>
   );
 };
