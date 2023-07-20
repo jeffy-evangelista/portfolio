@@ -8,7 +8,9 @@ type ProjectsProps = {};
 const Projects: React.FC<ProjectsProps> = () => {
   return (
     <CustomSection sectionName="projects" sectionTitle="Projects">
-      <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} gap={10}>
+      <SimpleGrid columns={{ base: 1, xl: 2 }} gap={{ base: 5, xl: 10 }}>
+        <ProjectCard />
+        <ProjectCard />
         <ProjectCard />
         <ProjectCard />
       </SimpleGrid>

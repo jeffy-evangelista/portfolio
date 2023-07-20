@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         mt={"55px"}
         direction={"column"}
         w={"full"}
-        px={{ base: "5px", sm: "50px", md: "100px", lg: "150px" }}
+        px={{ base: "5px", md: "100px", lg: "150px" }}
       >
         {children}
       </Flex>
