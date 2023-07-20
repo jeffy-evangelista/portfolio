@@ -14,12 +14,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
 }) => {
   return (
     <div id={sectionName}>
-      <Flex
-        direction={"column"}
-        align={"center"}
-        // border={"1px solid red"}
-        minH={"calc(100vh - 56px)"}
-      >
+      <Flex direction={"column"} align={"center"} minH={"calc(100vh - 56px)"}>
         <Text
           color={"brand.darkGrey"}
           fontSize={{ base: "24px", md: "32px" }}
@@ -27,13 +22,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
         >
           {sectionTitle}
         </Text>
-        <Flex
-          align={"center"}
-          justify={"center"}
-          w={"full"}
-          flexGrow={1}
-          // border={"1px solid blue"}
-        >
+        <Flex align={"center"} justify={"center"} w={"full"} flexGrow={1}>
           <VStack spacing={10}>{children}</VStack>
         </Flex>
       </Flex>

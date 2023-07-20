@@ -1,5 +1,6 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
+import ProjectCard from "components/Projects/ProjectCard";
 import React from "react";
 
 type ProjectsProps = {};
@@ -7,22 +8,10 @@ type ProjectsProps = {};
 const Projects: React.FC<ProjectsProps> = () => {
   return (
     <CustomSection sectionName="projects" sectionTitle="Projects">
-      <HStack spacing={"10px"}>
-        <Box
-          h={"350px"}
-          w={"270px"}
-          bg={"white"}
-          boxShadow={"md"}
-          borderRadius={"10px"}
-        ></Box>
-        <Box
-          h={"350px"}
-          w={"270px"}
-          bg={"white"}
-          boxShadow={"md"}
-          borderRadius={"10px"}
-        ></Box>
-      </HStack>
+      <SimpleGrid columns={{ base: 1, md: 1, lg: 2 }} gap={10}>
+        <ProjectCard />
+        <ProjectCard />
+      </SimpleGrid>
     </CustomSection>
   );
 };
