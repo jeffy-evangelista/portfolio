@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <Flex
       w={"full"}
-      zIndex={"2"}
+      zIndex={"3"}
       top={0}
       position={"fixed"}
       bg={"brand.lightGrey"}

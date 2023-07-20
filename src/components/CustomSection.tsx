@@ -20,14 +20,16 @@ const CustomSection: React.FC<CustomSectionProps> = ({
         minH={"calc(100vh - 56px)"}
         mb={"100px"}
       >
-        <Text
-          color={"brand.darkGrey"}
-          fontSize={{ base: "24px", md: "32px" }}
-          fontWeight={"semibold"}
-          mb={"100px"}
-        >
-          {sectionTitle}
-        </Text>
+        {sectionTitle ? (
+          <Text
+            color={"brand.darkGrey"}
+            fontSize={{ base: "24px", md: "32px" }}
+            fontWeight={"semibold"}
+            mb={"100px"}
+          >
+            {sectionTitle}
+          </Text>
+        ) : null}
         <Flex align={"center"} justify={"center"} w={"full"} flexGrow={1}>
           <VStack spacing={10}>{children}</VStack>
         </Flex>
