@@ -22,13 +22,13 @@ type ContactProps = {};
 const Contact: React.FC<ContactProps> = () => {
   const socialLinks = [
     {
-      link: "https://www.linkedin.com/in/jefferson-ramos-0b4a6a1b3/",
+      link: "https://www.linkedin.com/in/jeffy-evangelista-b5951a13a/",
       icon: <FaLinkedin color={"#0a66c2"} size={30} />,
       label: "LinkedIn",
       color: "blue",
     },
     {
-      link: "https://www.linkedin.com/in/jefferson-ramos-0b4a6a1b3/",
+      link: "https://github.com/jeffigy",
       icon: <FaGithub color={"#35363a"} size={30} />,
       label: "Github",
       color: "gray",
@@ -46,12 +46,13 @@ const Contact: React.FC<ContactProps> = () => {
       color: "blue",
     },
     {
-      link: "https://www.linkedin.com/in/jefferson-ramos-0b4a6a1b3/",
+      link: "https://flowcv.com/resume/s0jbru19p6",
       icon: <BsPersonLinesFill color={"teal"} size={30} />,
       label: "Resume",
       color: "teal",
     },
   ];
+
   return (
     <CustomSection sectionName="contact" sectionTitle="Contact">
       <Card w={{ base: "350px", md: "500px" }}>
