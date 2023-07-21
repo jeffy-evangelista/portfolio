@@ -12,11 +12,10 @@ import {
 } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
 import React from "react";
-import { FaGithub, FaFacebook, FaLinkedin } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
 import SocialLink from "components/Contact/SocialLink";
-
+import ResumeFile from "assets/Jeffy Evangelista.pdf";
 type ContactProps = {};
 
 const Contact: React.FC<ContactProps> = () => {
@@ -34,30 +33,22 @@ const Contact: React.FC<ContactProps> = () => {
       color: "gray",
     },
     {
-      link: "https://www.linkedin.com/in/jefferson-ramos-0b4a6a1b3/",
-      icon: <HiOutlineMail color={"#d33f34"} size={30} />,
-      label: "Mail",
-      color: "red",
-    },
-    {
-      link: "https://www.linkedin.com/in/jefferson-ramos-0b4a6a1b3/",
-      icon: <FaFacebook color={"#1877f2"} size={30} />,
-      label: "Facebook",
-      color: "blue",
-    },
-    {
       link: "https://flowcv.com/resume/s0jbru19p6",
-      icon: <BsPersonLinesFill color={"teal"} size={30} />,
+      icon: <BsPersonLinesFill color={"grey"} size={30} />,
       label: "Resume",
-      color: "teal",
+      color: "orange",
     },
   ];
-
   return (
     <CustomSection sectionName="contact" sectionTitle="Contact">
       <Card w={{ base: "350px", md: "500px" }}>
         <CardBody>
-          <Flex justify={"space-between"}>
+          <div>
+            <a href={ResumeFile} target="_blank" rel="noreferrer">
+              <button>Open Resume</button>
+            </a>
+          </div>
+          <Flex justify={"space-between"} px={"50px"}>
             {socialLinks.map((link, index) => (
               <SocialLink
                 key={index}
