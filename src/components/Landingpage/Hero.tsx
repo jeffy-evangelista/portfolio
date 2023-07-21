@@ -1,6 +1,7 @@
 import { Flex, Image, Stack, Text, Button } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
 import ProfilePicture from "assets/profile.jpg";
+import { Link } from "react-scroll";
 
 function Hero() {
   return (
@@ -52,8 +53,27 @@ function Hero() {
             direction="row"
             gap={5}
           >
-            <Button>Let's Work Together </Button>
-            <Button variant={"outline"}>Explore Projects </Button>
+            <Button
+              as={Link}
+              to={"contact"}
+              spy={true}
+              smooth={true}
+              offset={-56}
+              duration={500}
+            >
+              Let's Work Together{" "}
+            </Button>
+            <Button
+              as={Link}
+              to={"projects"}
+              spy={true}
+              smooth={true}
+              offset={-56}
+              duration={500}
+              variant={"outline"}
+            >
+              Explore Projects{" "}
+            </Button>
           </Stack>
         </Flex>
         <Image
