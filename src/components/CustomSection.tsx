@@ -18,14 +18,14 @@ const CustomSection: React.FC<CustomSectionProps> = ({
         direction={"column"}
         align={"center"}
         minH={"calc(100vh - 56px)"}
-        mb={"100px"}
+        mb={{ base: "50px", md: "100px" }}
       >
         {sectionTitle ? (
           <Text
             color={"brand.darkGrey"}
             fontSize={{ base: "24px", md: "32px" }}
             fontWeight={"semibold"}
-            mb={"100px"}
+            mb={{ base: "50px", md: "100px" }}
           >
             {sectionTitle}
           </Text>

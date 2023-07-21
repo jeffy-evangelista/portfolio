@@ -22,8 +22,6 @@ const NavLink: React.FC<NavLinkProps> = ({ to, name, onClose }) => {
     }
   }, [isMdScreen, onClose]);
 
-  //if screen is md auto close
-
   return (
     <Button
       as={Link}
