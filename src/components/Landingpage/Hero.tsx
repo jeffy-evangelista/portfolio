@@ -34,7 +34,7 @@ function Hero() {
         </Flex>
         <Image
           borderRadius={"full"}
-          boxSize={{ base: "250px", md: "270px", lg: "300px" }}
+          boxSize={{ base: "230px", md: "250px", lg: "300px" }}
           alt="cover-photo"
           src={ProfilePicture}
         />

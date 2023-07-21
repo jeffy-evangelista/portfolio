@@ -1,26 +1,44 @@
-import { Button } from "@chakra-ui/react";
-import React from "react";
+import { Button, useBreakpointValue } from "@chakra-ui/react";
+import React, { useEffect } from "react";
+
 import { Link } from "react-scroll";
 
 type NavLinkProps = {
   to: string;
   name: string;
+  onClose?: () => void;
 };
 
-const NavLink: React.FC<NavLinkProps> = ({ to, name }) => {
+const NavLink: React.FC<NavLinkProps> = ({ to, name, onClose }) => {
+  const isMdScreen = useBreakpointValue({ base: false, md: true });
+  const handleClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
+  useEffect(() => {
+    if (isMdScreen && onClose) {
+      onClose();
+    }
+  }, [isMdScreen, onClose]);
+
+  //if screen is md auto close
+
   return (
-    <Button variant={"ghost"} colorScheme="teal" color={"brand.darkGrey"}>
-      {" "}
-      <Link
-        activeClass="active"
-        to={to}
-        spy={true}
-        smooth={true}
-        offset={-56}
-        duration={500}
-      >
-        {name}
-      </Link>
+    <Button
+      as={Link}
+      variant={"ghost"}
+      colorScheme="teal"
+      fontSize={{ base: "22px", md: "16px" }}
+      onClick={handleClick}
+      to={to}
+      spy={true}
+      smooth={true}
+      offset={-56}
+      duration={500}
+      mb={{ base: "20px", md: "0px" }}
+    >
+      {name}
     </Button>
   );
 };

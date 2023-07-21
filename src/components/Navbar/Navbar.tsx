@@ -1,9 +1,9 @@
-import { Flex, HStack, IconButton, Image, Spacer } from "@chakra-ui/react";
+import { Flex, HStack, Image, Spacer } from "@chakra-ui/react";
 import React from "react";
-import logo from "../../../public/portfolio-logo.svg";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import logo from "assets/portfolio-logo.svg";
 
 import NavLink from "./NavLink";
+import MobileNavBar from "./MobileNav";
 
 type NavbarProps = {};
 
@@ -30,12 +30,6 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Image h={"40px"} src={logo} />
       <Spacer />
 
-      <IconButton
-        display={{ base: "block", md: "none" }}
-        variant={"outline"}
-        aria-label="menu-button"
-        icon={<HamburgerIcon />}
-      />
       <HStack
         spacing={{ base: "0px", lg: "30px" }}
         display={{ base: "none", md: "block" }}
@@ -44,6 +38,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <NavLink key={index} to={link.href} name={link.name} />
         ))}
       </HStack>
+      <MobileNavBar NavLinks={NavLinks} />
     </Flex>
   );
 };
