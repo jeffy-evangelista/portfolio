@@ -38,7 +38,7 @@ const Contact = () => {
             <Flex
               justify={{ base: "start", md: "space-around" }}
               direction={"column"}
-              w={"350px"}
+              w={"330px"}
               align={{ base: "center", md: "start" }}
               px={{ base: "0px", md: "50px" }}
             >
@@ -73,7 +73,7 @@ const Contact = () => {
                 View My CV
               </Button>
             </Flex>
-            <Flex direction={"column"} w={"350px"}>
+            <Flex direction={"column"} w={"330px"}>
               <form
                 method="Post"
                 action="https://getform.io/f/7fbfb199-280e-44d8-b4f8-ef09e25d8ed6"
