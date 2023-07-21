@@ -15,7 +15,6 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsPersonLinesFill } from "react-icons/bs";
 import SocialLink from "components/Contact/SocialLink";
-import ResumeFile from "assets/Jeffy Evangelista.pdf";
 type ContactProps = {};
 
 const Contact: React.FC<ContactProps> = () => {
@@ -43,11 +42,6 @@ const Contact: React.FC<ContactProps> = () => {
     <CustomSection sectionName="contact" sectionTitle="Contact">
       <Card w={{ base: "350px", md: "500px" }}>
         <CardBody>
-          <div>
-            <a href={ResumeFile} target="_blank" rel="noreferrer">
-              <button>Open Resume</button>
-            </a>
-          </div>
           <Flex justify={"space-between"} px={"50px"}>
             {socialLinks.map((link, index) => (
               <SocialLink
