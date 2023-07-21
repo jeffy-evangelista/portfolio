@@ -1,6 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
+import { ButtonTheme } from "./Button";
+import { InputTheme } from "./InputTheme";
 
 const theme = extendTheme({
+  components: {
+    Button: ButtonTheme,
+    Input: InputTheme,
+  },
   Fonts: {
     heading: `'Inter', sans-serif`,
     body: `'Inter', sans-serif`,

@@ -1,78 +1,110 @@
 import {
-  AbsoluteCenter,
-  Box,
   Button,
   Card,
   CardBody,
-  Divider,
   Flex,
+  HStack,
   Input,
+  Link,
   Stack,
+  Text,
   Textarea,
 } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
-import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsPersonLinesFill } from "react-icons/bs";
-import SocialLink from "components/Contact/SocialLink";
-type ContactProps = {};
 
-const Contact: React.FC<ContactProps> = () => {
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+import SocialLink from "components/Contact/SocialLink";
+import Resume from "assets/Jeffy-Evangelista.pdf";
+
+const Contact = () => {
   const socialLinks = [
     {
       link: "https://www.linkedin.com/in/jeffy-evangelista-b5951a13a/",
-      icon: <FaLinkedin color={"#0a66c2"} size={30} />,
+      icon: <FaLinkedin size={30} />,
       label: "LinkedIn",
-      color: "blue",
     },
     {
       link: "https://github.com/jeffigy",
-      icon: <FaGithub color={"#35363a"} size={30} />,
+      icon: <FaGithub size={30} />,
       label: "Github",
-      color: "gray",
-    },
-    {
-      link: "https://flowcv.com/resume/s0jbru19p6",
-      icon: <BsPersonLinesFill color={"grey"} size={30} />,
-      label: "Resume",
-      color: "orange",
     },
   ];
   return (
     <CustomSection sectionName="contact" sectionTitle="Contact">
-      <Card w={{ base: "350px", md: "500px" }}>
+      <Card>
         <CardBody>
-          <Flex justify={"space-between"} px={"50px"}>
-            {socialLinks.map((link, index) => (
-              <SocialLink
-                key={index}
-                link={link.link}
-                icon={link.icon}
-                label={link.label}
-                color={link.color}
-              />
-            ))}
-          </Flex>
-          <Box position="relative" padding="10">
-            <Divider />
-            <AbsoluteCenter color={"brand.darkGrey"} bg={"white"} px="4">
-              or
-            </AbsoluteCenter>
-          </Box>
-          <form
-            method="Post"
-            action="https://getform.io/f/7fbfb199-280e-44d8-b4f8-ef09e25d8ed6"
-          >
-            <Stack direction={"column"} spacing={5}>
-              <Input name="name" placeholder="Name" type="string" isRequired />
-              <Input name="Email" placeholder="email" type="email" isRequired />
-              <Textarea name="message" placeholder="Message" rows={10} />
-              <Button bg={"brand.teal"} color={"white"} type="submit">
-                {" "}
-                Let's Talk
+          <Stack direction={{ base: "column", md: "row" }}>
+            <Flex
+              justify={{ base: "start", md: "space-around" }}
+              direction={"column"}
+              w={"350px"}
+              align={{ base: "center", md: "start" }}
+              px={{ base: "0px", md: "50px" }}
+            >
+              <Stack spacing={0} mb={{ base: "20px", md: "0px" }}>
+                <Text>Email me at</Text>
+                <Text color={"teal"}>ejeffydev@gmail.com</Text>
+              </Stack>
+
+              <Stack spacing={0} mb={{ base: "20px", md: "0px" }}>
+                <Text>Connect With Me</Text>
+                <HStack gap={5}>
+                  {socialLinks.map((link, index) => (
+                    <SocialLink
+                      key={index}
+                      link={link.link}
+                      icon={link.icon}
+                      label={link.label}
+                    />
+                  ))}
+                </HStack>
+              </Stack>
+
+              <Button
+                mb={{ base: "20px", md: "0px" }}
+                as={Link}
+                variant={"outline"}
+                target={"blank"}
+                href={Resume}
+                rel="noreferrer"
+                download={"Jeffy-Evangelista-Resume.pdf"}
+              >
+                View My CV
               </Button>
-            </Stack>
-          </form>
+            </Flex>
+            <Flex direction={"column"} w={"350px"}>
+              <form
+                method="Post"
+                action="https://getform.io/f/7fbfb199-280e-44d8-b4f8-ef09e25d8ed6"
+              >
+                <Stack direction={"column"} spacing={5}>
+                  <Input
+                    name="name"
+                    placeholder="Name"
+                    type="string"
+                    isRequired
+                  />
+                  <Input
+                    name="Email"
+                    placeholder="email"
+                    type="email"
+                    isRequired
+                  />
+                  <Textarea
+                    focusBorderColor="teal"
+                    name="message"
+                    placeholder="Message"
+                    rows={5}
+                  />
+                  <Button bg={"brand.teal"} color={"white"} type="submit">
+                    {" "}
+                    Let's Talk
+                  </Button>
+                </Stack>
+              </form>
+            </Flex>
+          </Stack>
         </CardBody>
       </Card>
     </CustomSection>

@@ -26,7 +26,6 @@ const NavLink: React.FC<NavLinkProps> = ({ to, name, onClose }) => {
     <Button
       as={Link}
       variant={"ghost"}
-      colorScheme="teal"
       fontSize={{ base: "22px", md: "16px" }}
       onClick={handleClick}
       to={to}

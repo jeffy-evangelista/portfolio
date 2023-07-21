@@ -59,7 +59,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <Flex justifyContent="flex-end" alignItems="center">
             <Box mr={2}>
               <Button
-                colorScheme="teal"
                 variant={"outline"}
                 onClick={() => window.open(sourceLink, "_blank")}
               >
@@ -67,10 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               </Button>
             </Box>
             <Box>
-              <Button
-                onClick={() => window.open(demoLink, "_blank")}
-                colorScheme="teal"
-              >
+              <Button onClick={() => window.open(demoLink, "_blank")}>
                 Demo
               </Button>
             </Box>

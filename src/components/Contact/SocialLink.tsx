@@ -5,7 +5,7 @@ type SocialLinkProps = {
   link: string;
   icon: any;
   label: string;
-  color: string;
+  color?: string;
 };
 
 const SocialLink: React.FC<SocialLinkProps> = ({
