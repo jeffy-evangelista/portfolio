@@ -55,15 +55,16 @@ function Hero() {
             px={{ base: "25px", sm: "50px", md: "0px" }}
             fontSize={{ base: "14px", md: "16px" }}
             mb={"30px"}
-            textAlign={{ base: "unset", md: "start" }}
+            textAlign={{ base: "center", md: "start" }}
           >
-            Driven by thirst for learning and passion for coding. I am a web
-            developer who loves to create beautiful and functional websites.
+            Driven by thirst for learning and profound fascination on how
+            technology works. I am a web developer who is passionate about
+            building software solutions. Welcome to my developer portfolio!
           </Text>
           <Stack
             justify={{ base: "center", md: "start" }}
-            direction="row"
-            gap={5}
+            direction={{ base: "column", md: "row" }}
+            gap={{ base: 1, md: 5 }}
           >
             <Button
               as={Link}
@@ -82,7 +83,7 @@ function Hero() {
               smooth={true}
               offset={-56}
               duration={500}
-              variant={"outline"}
+              variant={"ghost"}
             >
               Explore Projects{" "}
             </Button>
