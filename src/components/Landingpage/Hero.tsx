@@ -1,9 +1,18 @@
-import { Flex, Image, Stack, Text, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Image,
+  Stack,
+  Text,
+  Button,
+  useColorMode,
+  Heading,
+} from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
 import ProfilePicture from "assets/profile.jpg";
 import { Link } from "react-scroll";
 
 function Hero() {
+  const { colorMode } = useColorMode();
   return (
     <CustomSection sectionName="hero">
       <Flex
@@ -20,30 +29,33 @@ function Hero() {
           <Text
             textAlign={{ base: "center", md: "start" }}
             fontSize={"16px"}
-            color={"teal"}
+            color={colorMode === "dark" ? "teal.200" : "teal"}
           >
             Hello, I am
           </Text>
-          <Text
+          <Heading
+            lineHeight={"0.9"}
+            as={"h1"}
             textAlign={{ base: "center", md: "start" }}
             fontSize={{ base: "30px", sm: "38px", md: "40px", lg: "72px" }}
-            fontWeight={"bold"}
-            color={"brand.darkGrey"}
+            color={colorMode === "dark" ? "gray.100" : "gray.600"}
           >
             Jeffy Evangelista
-          </Text>
-          <Text
+          </Heading>
+          <Heading
+            as={"h2"}
+            variant={"heading"}
             textAlign={{ base: "center", md: "start" }}
             fontSize={{ base: "24px", sm: "25px", md: "34px", lg: "48px" }}
-            fontWeight={"bold"}
-            color={"rgba(88, 89, 91, 0.5)"}
+            color={colorMode === "dark" ? "gray.200" : "gray.500"}
           >
             Web Developer
-          </Text>
+          </Heading>
           <Text
             px={{ base: "25px", sm: "50px", md: "0px" }}
             fontSize={{ base: "14px", md: "16px" }}
             mb={"30px"}
+            textAlign={{ base: "unset", md: "start" }}
           >
             Driven by thirst for learning and passion for coding. I am a web
             developer who loves to create beautiful and functional websites.

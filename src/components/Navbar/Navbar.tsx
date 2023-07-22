@@ -1,13 +1,19 @@
-import { Flex, HStack, Image, Spacer } from "@chakra-ui/react";
-import React from "react";
+import {
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Spacer,
+  useColorMode,
+} from "@chakra-ui/react";
 import logo from "assets/portfolio-logo.svg";
 
 import NavLink from "./NavLink";
 import MobileNavBar from "./MobileNav";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
-type NavbarProps = {};
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   const NavLinks = [
     { name: "Home", href: "hero" },
     { name: "About", href: "about" },
@@ -21,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       zIndex={"3"}
       top={0}
       position={"fixed"}
-      bg={"brand.lightGrey"}
+      bg={colorMode === "dark" ? "brand.darkModeBG" : "brand.lightGrey"}
       align={"center"}
       px={{ base: "5px", sm: "50px", md: "100px", lg: "150px" }}
       mx="auto"
@@ -39,6 +45,13 @@ const Navbar: React.FC<NavbarProps> = () => {
         ))}
       </HStack>
       <MobileNavBar NavLinks={NavLinks} />
+      <IconButton
+        ml={{ base: "5px", md: "0px" }}
+        variant={"ghost"}
+        icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+        aria-label="toggle-mode"
+        onClick={toggleColorMode}
+      />
     </Flex>
   );
 };

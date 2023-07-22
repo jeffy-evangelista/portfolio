@@ -9,6 +9,7 @@ import {
   Stack,
   Text,
   Textarea,
+  useColorMode,
 } from "@chakra-ui/react";
 import CustomSection from "components/CustomSection";
 
@@ -18,6 +19,7 @@ import SocialLink from "components/Contact/SocialLink";
 import Resume from "assets/Jeffy-Evangelista.pdf";
 
 const Contact = () => {
+  const { colorMode } = useColorMode();
   const socialLinks = [
     {
       link: "https://www.linkedin.com/in/jeffy-evangelista-b5951a13a/",
@@ -42,12 +44,22 @@ const Contact = () => {
               align={{ base: "center", md: "start" }}
               px={{ base: "0px", md: "50px" }}
             >
-              <Stack spacing={0} mb={{ base: "20px", md: "0px" }}>
+              <Stack
+                align={{ base: "center", md: "start" }}
+                spacing={0}
+                mb={{ base: "20px", md: "0px" }}
+              >
                 <Text>Email me at</Text>
-                <Text color={"teal"}>ejeffydev@gmail.com</Text>
+                <Text color={colorMode === "dark" ? "teal.200" : "teal"}>
+                  ejeffydev@gmail.com
+                </Text>
               </Stack>
 
-              <Stack spacing={0} mb={{ base: "20px", md: "0px" }}>
+              <Stack
+                align={{ base: "center", md: "start" }}
+                spacing={0}
+                mb={{ base: "20px", md: "0px" }}
+              >
                 <Text>Connect With Me</Text>
                 <HStack gap={5}>
                   {socialLinks.map((link, index) => (
@@ -97,7 +109,7 @@ const Contact = () => {
                     placeholder="Message"
                     rows={5}
                   />
-                  <Button bg={"brand.teal"} color={"white"} type="submit">
+                  <Button color={"white"} type="submit">
                     {" "}
                     Let's Talk
                   </Button>

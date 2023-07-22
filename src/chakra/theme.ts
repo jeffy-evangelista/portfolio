@@ -1,13 +1,21 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 import { ButtonTheme } from "./Button";
 import { InputTheme } from "./InputTheme";
+import { CardTheme } from "./CardTheme";
+
+const config: ThemeConfig = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+};
 
 const theme = extendTheme({
+  config,
   components: {
     Button: ButtonTheme,
     Input: InputTheme,
+    Card: CardTheme,
   },
-  Fonts: {
+  fonts: {
     heading: `'Inter', sans-serif`,
     body: `'Inter', sans-serif`,
   },
@@ -15,16 +23,18 @@ const theme = extendTheme({
     brand: {
       lightGrey: "#F2F0EE",
       darkGrey: "#58595B",
-      teal: "#008080",
+      darkModeBG: "#333333",
+      darkModeCardBG: "#3d3b3e",
     },
   },
   styles: {
-    global: {
+    global: ({ colorMode }: { colorMode: "light" | "dark" }) => ({
       // styles for the `body`
       body: {
-        bg: "#F2F0EE",
+        bg: colorMode === "dark" ? "brand.darkModeBG" : "brand.lightGrey",
       },
-    },
+    }),
   },
 });
+
 export default theme;

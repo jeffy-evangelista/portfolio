@@ -1,4 +1,4 @@
-import { Flex, Text, VStack } from "@chakra-ui/react";
+import { Flex, Text, VStack, useColorMode } from "@chakra-ui/react";
 import React from "react";
 
 type CustomSectionProps = {
@@ -12,6 +12,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
   sectionName,
   children,
 }) => {
+  const { colorMode } = useColorMode();
   return (
     <div id={sectionName}>
       <Flex
@@ -22,7 +23,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
       >
         {sectionTitle ? (
           <Text
-            color={"brand.darkGrey"}
+            color={colorMode === "dark" ? "gray.200" : "gray.500"}
             fontSize={{ base: "24px", md: "32px" }}
             fontWeight={"semibold"}
             mb={{ base: "50px", md: "100px" }}
