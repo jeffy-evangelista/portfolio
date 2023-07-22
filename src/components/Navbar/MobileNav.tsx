@@ -9,6 +9,7 @@ import {
   Flex,
   Spacer,
   ModalCloseButton,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 import NavLink from "./NavLink";
@@ -20,6 +21,7 @@ type MobileNavBarProps = {
 const MobileNavBar: React.FC<MobileNavBarProps> = ({ NavLinks }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
+  const { colorMode } = useColorMode();
   return (
     <>
       {" "}
@@ -40,7 +42,9 @@ const MobileNavBar: React.FC<MobileNavBarProps> = ({ NavLinks }) => {
         size={"full"}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent
+          bg={colorMode === "dark" ? "brand.darkModeCardBG" : "white"}
+        >
           <Flex w={"full"} p={"10px"}>
             <Spacer />
             <ModalCloseButton display={"block"} position={"relative"} m={0} />
