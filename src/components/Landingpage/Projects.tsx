@@ -58,7 +58,11 @@ const Projects: React.FC<ProjectsProps> = () => {
   ];
   return (
     <CustomSection sectionName="projects" sectionTitle="Projects">
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} gap={5}>
+      <SimpleGrid
+        mt={{ base: "50px", md: "100px" }}
+        columns={{ base: 1, md: 2, xl: 3 }}
+        gap={5}
+      >
         {projects.map((project) => (
           <ProjectCard
             key={project.title}

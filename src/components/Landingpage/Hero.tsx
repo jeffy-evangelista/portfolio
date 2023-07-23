@@ -10,7 +10,7 @@ import {
 import CustomSection from "components/CustomSection";
 import ProfilePicture from "assets/profile.jpg";
 import { Link } from "react-scroll";
-
+import { motion } from "framer-motion";
 function Hero() {
   const { colorMode } = useColorMode();
   return (
@@ -43,6 +43,7 @@ function Hero() {
             Jeffy Evangelista
           </Heading>
           <Heading
+            mb={"30px"}
             as={"h2"}
             variant={"heading"}
             textAlign={{ base: "center", md: "start" }}
@@ -51,7 +52,7 @@ function Hero() {
           >
             Web Developer
           </Heading>
-          <Text
+          {/* <Text
             px={{ base: "25px", sm: "50px", md: "0px" }}
             fontSize={{ base: "14px", md: "16px" }}
             mb={"30px"}
@@ -60,33 +61,39 @@ function Hero() {
             Driven by thirst for learning and profound fascination on how
             technology works. I am a web developer who is passionate about
             building software solutions. Welcome to my developer portfolio!
-          </Text>
+          </Text> */}
           <Stack
             justify={{ base: "center", md: "start" }}
             direction={{ base: "column", md: "row" }}
             gap={{ base: 1, md: 5 }}
           >
-            <Button
-              as={Link}
-              to={"contact"}
-              spy={true}
-              smooth={true}
-              offset={-56}
-              duration={500}
-            >
-              Let's Work Together{" "}
-            </Button>
-            <Button
-              as={Link}
-              to={"projects"}
-              spy={true}
-              smooth={true}
-              offset={-56}
-              duration={500}
-              variant={"ghost"}
-            >
-              Explore Projects{" "}
-            </Button>
+            <motion.a whileHover={{ scale: 1.1, zIndex: 2 }}>
+              <Button
+                w={"full"}
+                as={Link}
+                to={"contact"}
+                spy={true}
+                smooth={true}
+                offset={-56}
+                duration={500}
+              >
+                Get in Touch
+              </Button>
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.1, zIndex: 2 }}>
+              <Button
+                w={"full"}
+                as={Link}
+                to={"projects"}
+                spy={true}
+                smooth={true}
+                offset={-56}
+                duration={500}
+                variant={"ghost"}
+              >
+                Explore Projects{" "}
+              </Button>
+            </motion.a>
           </Stack>
         </Flex>
         <Image

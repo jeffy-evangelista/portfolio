@@ -1,4 +1,4 @@
-// import About from "components/Landingpage/About";
+import About from "components/Landingpage/About";
 import Contact from "components/Landingpage/Contact";
 import Hero from "components/Landingpage/Hero";
 import Projects from "components/Landingpage/Projects";
@@ -8,7 +8,7 @@ function index() {
   return (
     <>
       <Hero />
-      {/* <About /> */}
+      <About />
       <Skills />
       <Projects />
       <Contact />

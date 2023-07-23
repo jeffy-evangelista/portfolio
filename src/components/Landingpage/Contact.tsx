@@ -1,7 +1,10 @@
 import {
+  AbsoluteCenter,
+  Box,
   Button,
   Card,
   CardBody,
+  Divider,
   Flex,
   HStack,
   Input,
@@ -40,21 +43,10 @@ const Contact = () => {
             <Flex
               justify={{ base: "start", md: "space-around" }}
               direction={"column"}
-              w={"330px"}
+              w={{ base: "330px", md: "300px" }}
               align={{ base: "center", md: "start" }}
               px={{ base: "0px", md: "50px" }}
             >
-              <Stack
-                align={{ base: "center", md: "start" }}
-                spacing={0}
-                mb={{ base: "20px", md: "0px" }}
-              >
-                <Text>Email me at</Text>
-                <Text color={colorMode === "dark" ? "teal.200" : "teal"}>
-                  ejeffydev@gmail.com
-                </Text>
-              </Stack>
-
               <Stack
                 align={{ base: "center", md: "start" }}
                 spacing={0}
@@ -73,6 +65,17 @@ const Contact = () => {
                 </HStack>
               </Stack>
 
+              <Stack
+                align={{ base: "center", md: "start" }}
+                spacing={0}
+                mb={{ base: "20px", md: "0px" }}
+              >
+                <Text>Email me at</Text>
+                <Text color={colorMode === "dark" ? "teal.200" : "teal"}>
+                  ejeffydev@gmail.com
+                </Text>
+              </Stack>
+
               <Button
                 mb={{ base: "20px", md: "0px" }}
                 as={Link}
@@ -81,11 +84,28 @@ const Contact = () => {
                 href={Resume}
                 rel="noreferrer"
                 download={"Jeffy-Evangelista-Resume.pdf"}
+                w={"full"}
               >
-                View My CV
+                Download My Resume
               </Button>
             </Flex>
-            <Flex direction={"column"} w={"330px"}>
+            <Box position="relative" p="10">
+              <Divider
+                orientation={"horizontal"}
+                display={{ base: "block", md: "none" }}
+              />
+              <Divider
+                orientation={"vertical"}
+                display={{ base: "none", md: "block" }}
+              />
+              <AbsoluteCenter
+                bg={colorMode === "dark" ? "brand.darkModeCardBG" : "white"}
+                px="4"
+              >
+                or
+              </AbsoluteCenter>
+            </Box>
+            <Flex direction={"column"} w={{ base: "330px", md: "300px" }}>
               <form
                 method="Post"
                 action="https://getform.io/f/7fbfb199-280e-44d8-b4f8-ef09e25d8ed6"
@@ -111,7 +131,7 @@ const Contact = () => {
                   />
                   <Button color={"white"} type="submit">
                     {" "}
-                    Let's Talk
+                    Get in Touch
                   </Button>
                 </Stack>
               </form>

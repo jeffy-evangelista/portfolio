@@ -26,7 +26,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
             color={colorMode === "dark" ? "gray.200" : "gray.500"}
             fontSize={{ base: "24px", md: "32px" }}
             fontWeight={"semibold"}
-            mb={{ base: "50px", md: "100px" }}
+            // mb={{ base: "50px", md: "100px" }}
           >
             {sectionTitle}
           </Text>

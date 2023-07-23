@@ -11,12 +11,13 @@ import logo from "assets/portfolio-logo.svg";
 import NavLink from "./NavLink";
 import MobileNavBar from "./MobileNav";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const NavLinks = [
     { name: "Home", href: "hero" },
-    // { name: "About", href: "about" },
+    { name: "About", href: "about" },
     { name: "Skills", href: "skills" },
     { name: "Projects", href: "projects" },
     { name: "Contact", href: "contact" },
@@ -33,7 +34,9 @@ const Navbar = () => {
       mx="auto"
       h={"56px"}
     >
-      <Image h={"40px"} src={logo} />
+      <Link to="hero" spy={true} smooth={true} offset={-56} duration={500}>
+        <Image h={"40px"} src={logo} cursor={"pointer"} />
+      </Link>
       <Spacer />
 
       <HStack
