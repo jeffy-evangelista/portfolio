@@ -43,12 +43,11 @@ const Contact = () => {
             <Flex
               justify={{ base: "start", md: "space-around" }}
               direction={"column"}
-              w={{ base: "330px", md: "300px" }}
-              align={{ base: "center", md: "start" }}
-              px={{ base: "0px", md: "50px" }}
+              maxW={"330px"}
+              align={"center"}
             >
               <Stack
-                align={{ base: "center", md: "start" }}
+                align={"center"}
                 spacing={0}
                 mb={{ base: "20px", md: "0px" }}
               >
@@ -66,7 +65,7 @@ const Contact = () => {
               </Stack>
 
               <Stack
-                align={{ base: "center", md: "start" }}
+                align={"center"}
                 spacing={0}
                 mb={{ base: "20px", md: "0px" }}
               >
@@ -89,7 +88,8 @@ const Contact = () => {
                 Download My Resume
               </Button>
             </Flex>
-            <Box position="relative" p="10">
+
+            <Box position="relative" p="5">
               <Divider
                 orientation={"horizontal"}
                 display={{ base: "block", md: "none" }}
@@ -105,7 +105,7 @@ const Contact = () => {
                 or
               </AbsoluteCenter>
             </Box>
-            <Flex direction={"column"} w={{ base: "330px", md: "300px" }}>
+            <Flex direction={"column"} maxW={"330px"}>
               <form
                 method="Post"
                 action="https://getform.io/f/7fbfb199-280e-44d8-b4f8-ef09e25d8ed6"

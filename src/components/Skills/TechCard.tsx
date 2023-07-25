@@ -1,4 +1,4 @@
-import { Card, Flex } from "@chakra-ui/react";
+import { Card, Flex, Image } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 type TechCardProps = {
@@ -9,16 +9,23 @@ type TechCardProps = {
 const TechCard: React.FC<TechCardProps> = ({ techName, techLogo }) => {
   return (
     <motion.a whileHover={{ scale: 1.1 }}>
-      <Card boxSize={"160px"} justify={"center"} align={"center"}>
-        <Flex direction={"column"} align={"center"}>
-          <motion.div
-            style={{ width: "100px", height: "100px" }}
-            whileHover={{ scale: 1.2 }}
-          >
-            <img
+      <Card
+        boxSize="160px"
+        justify="center"
+        align="center"
+        sx={{
+          "@media screen and (max-width: 768px)": {
+            boxSize: "120px",
+          },
+        }}
+      >
+        <Flex direction="column" align="center">
+          <motion.div whileHover={{ scale: 1.2 }}>
+            <Image
               src={techLogo}
               alt="Tech Logo"
-              style={{ width: "100%", height: "100%" }}
+              w={{ base: "65px", md: "100px" }}
+              h={{ base: "65px", md: "100px" }}
             />
           </motion.div>
           <motion.p whileHover={{ scale: 1.2 }}>{techName}</motion.p>
